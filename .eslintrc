@@ -1,0 +1,13 @@
+{
+    "env": {
+        "mocha": true
+    },
+    "extends": [
+        "airbnb"
+    ],
+    "rules": {
+        "spaced-comment": ["error", "always", { "markers": [":", "::"] }],
+        "no-console": ["error", { "allow": ["warn", "error"] }],
+        "indent": ["error", 4]
+    }
+}

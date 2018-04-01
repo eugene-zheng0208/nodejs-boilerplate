@@ -1,0 +1,53 @@
+{
+  "name": "nodejs-boilerplate",
+  "description": "REST API for StreetStream Website",
+  "version": "0.1.0",
+  "homepage": "http://api.streetstream.com",
+  "private": true,
+  "engine": "",
+  "bugs": {
+    "url": ""
+  },
+  "main": "src/app.js",
+  "scripts": {
+    "test": "./node_modules/nyc/bin/nyc.js ./node_modules/.bin/mocha test/app.test.js --reporter mochawesome",
+    "test::all": "npm run lint && npm run flow && npm run test",
+    "release": "standard-version",
+    "start": "node src/app.js",
+    "lint": "./node_modules/eslint/bin/eslint.js ./src",
+    "lint::fix": "./node_modules/eslint/bin/eslint.js ./src --fix",
+    "debug": "node --inspect-brk src/app.js",
+    "commit": "git-cz",
+    "flow": "flow",
+    "prepush": "npm run test::all"
+  },
+  "repository": "",
+  "author": "XXX <xxx@komododigital.co.uk>",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "raven": "^2.2.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb": "^16.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-mocha": "^4.11.0",
+    "eslint-plugin-react": "^7.4.0",
+    "flow-bin": "^0.56.0",
+    "husky": "^0.14.3",
+    "istanbul": "^0.4.5",
+    "mocha": "^4.0.1",
+    "mochawesome": "^2.3.1",
+    "nyc": "^11.2.1",
+    "standard-version": "^4.2.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
